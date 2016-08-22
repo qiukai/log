@@ -4,13 +4,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
-import org.apache.log4j.Logger;
-
 import top.qiuk.log.db.DBUtil;
 
 public class TestLog4j {
-
-	private Logger logger = Logger.getLogger(getClass());
 
 	public static long time = 1L;
 
@@ -26,6 +22,7 @@ public class TestLog4j {
 	}
 
 	public void insertDebug() {
+		
 
 		for (int i = 0; i < 1000; i++) {
 			new Thread(new Runnable() {
