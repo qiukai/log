@@ -30,11 +30,13 @@ public class MongoDBJDBC {
 			// 通过连接认证获取MongoDB连接
 			MongoClient mongoClient = new MongoClient("localhost", 27017);
 
+			int maxBsonObjectSize = mongoClient.getMaxBsonObjectSize();
+
 			// 连接到数据库
 			MongoDatabase mongoDatabase = mongoClient.getDatabase("qk");
 			mongoDatabase.getCollection("test");
 
-			for (int i = 0; i < 100000; i++) {
+			for (int i = 0; i < 1; i++) {
 
 				System.out.println("Connect to database successfully");
 				MongoCollection<Document> collection = mongoDatabase.getCollection("test");
